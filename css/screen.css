@@ -3,7 +3,6 @@
 /* Common
 /*
 /*****************************************************************************/
-
 /* Global Reset */
 
 * {
@@ -156,7 +155,7 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: #eef; 
     padding: 0 .4em;
   }
 
@@ -195,3 +194,4 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
