@@ -1,3 +1,10 @@
+---
+layout: post
+title: Git commands
+---
+
+# {{ page.title }}
+
     Press enter to submit commands
     $ git init
     Initialized empty Git repository in /.git/
