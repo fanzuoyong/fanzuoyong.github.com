@@ -1,6 +1,0 @@
-= my to do list =
- * vim
- * github
- * vnc
- * useful link
- * ASN.1 and LTE message
