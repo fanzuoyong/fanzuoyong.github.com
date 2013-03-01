@@ -1,0 +1,5 @@
+= My knowledge base =
+    * My Urgent [[Tasks]] -- things to be done _yesterday_!!!
+    * [[Git usage]]
+    * Scratch Pad -- various temporary stuff.
+
