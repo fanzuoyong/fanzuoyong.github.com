@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Batch files</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<pre>
+echo off
+cls 
+echo This tool is for RD internal use, any problem please contact bin.1.cao@nsn.com
+echo Press 1 to Enable SSH;
+echo Press 2 to Enable RD Ports;
+echo Press 3 to Enable Both;
+echo Press 4 to Disable SSH;
+echo Press 5 to Disable RD Ports;
+echo Press 6 to Disable Both;
+set /p c=Make your choice here:
+
+GOTO CASE_%c%
+:CASE_1
+ECHO i equals 1
+GOTO SSH
+:CASE_2
+ECHO i equals 2
+GOTO RD
+:CASE_3
+ECHO i equals 3
+GOTO Both
+:CASE_4
+ECHO i equals 4
+GOTO disSSH
+:CASE_5
+ECHO i equals 5
+GOTO disRD
+:CASE_6
+ECHO i equals 6
+GOTO disBoth
+
+:SSH
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/enableSsh.cgi -t 1 --timeout=10 -q -O -
+pause 
+echo Press any key to continue...
+exit
+
+:RD
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/enableRndPorts.cgi -t 1 --timeout=10 -q -O -
+pause 
+echo Press any key to continue...
+exit
+
+:Both
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/enableSsh.cgi -t 1 --timeout=10 -q -O -
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/enableRndPorts.cgi -t 1 --timeout=10 -q -O -
+pause
+echo Press any key to continue...
+exit
+
+:disSSH
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/disableSsh.cgi -t 1 --timeout=10 -q -O -
+pause 
+echo Press any key to continue...
+exit
+
+:disRD
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/disableRndPorts.cgi -t 1 --timeout=10 -q -O -
+pause 
+echo Press any key to continue...
+exit
+
+:disBoth
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/disableSsh.cgi -t 1 --timeout=10 -q -O -
+wget.exe --user=Username --password=Userpasswd --no-check-certificate https://192.168.255.129/protected/disableRndPorts.cgi -t 1 --timeout=10 -q -O -
+pause
+echo Press any key to continue...
+exit
+</pre>
+
+</body>
+</html>
